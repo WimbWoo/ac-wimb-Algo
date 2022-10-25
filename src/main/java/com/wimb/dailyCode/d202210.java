@@ -25,4 +25,22 @@ public class d202210 {
         }
         return sb.toString();
     }
+
+    /**
+     * 915. 分割数组
+     * @param nums
+     * @return
+     */
+    public int partitionDisjoint(int []nums) {
+        int idx = 0, leftMax = nums[0], max = leftMax;
+        for (int i = 1; i < nums.length; i++) {
+            if (leftMax > nums[i]) {
+                leftMax = max;
+                idx = i;
+            } else {
+                max = Math.max(max, nums[i]);
+            }
+        }
+        return idx + 1;
+    }
 }
