@@ -1,4 +1,4 @@
-package com.wimb.ZuoClassCode.P3;
+package com.wimb.zuoClassCode.P3;
 
 /**
  * 递归

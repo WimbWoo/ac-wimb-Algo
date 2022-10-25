@@ -1,4 +1,4 @@
-package com.wimb.LeetCode100;
+package com.wimb.leetCode100;
 
 import java.util.HashMap;
 import java.util.HashSet;

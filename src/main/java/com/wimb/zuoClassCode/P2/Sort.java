@@ -1,4 +1,4 @@
-package com.wimb.ZuoClassCode.P2;
+package com.wimb.zuoClassCode.P2;
 
 /**
  * @Author: meng.wu01
