@@ -1,4 +1,4 @@
-package com.wimb.leetCode100;
+package com.wim.leetCode100;
 
 import java.util.*;
 

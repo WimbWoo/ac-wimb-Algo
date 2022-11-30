@@ -1,4 +1,4 @@
-package com.wimb.dailyCode;
+package com.wim.dailyCode;
 
 public class d202211 {
 

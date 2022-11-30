@@ -68,7 +68,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.wimb.AcWimbAlgoApplication</mainClass>
+                    <mainClass>com.wim.AcWimbAlgoApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

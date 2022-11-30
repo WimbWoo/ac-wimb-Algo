@@ -1,4 +1,4 @@
-package com.wimb.dailyCode;
+package com.wim.dailyCode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
