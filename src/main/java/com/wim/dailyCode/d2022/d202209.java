@@ -1,4 +1,4 @@
-package com.wim.dailyCode;
+package com.wim.dailyCode.d2022;
 
 import java.util.*;
 
