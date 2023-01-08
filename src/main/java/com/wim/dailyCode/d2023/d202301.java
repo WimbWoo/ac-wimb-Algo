@@ -56,5 +56,46 @@ public class d202301 {
     /**
      * 二分模板
      */
+    public int binarySearch(int nums[], int target) {
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            int mid = l + (r - l) >> 1;
+            if (nums[mid] > target) {
+                r = mid - 1;
+            } else if (nums[mid] < target) {
+                l = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 2185. 统计包含给定前缀的字符串
+     * startWih api
+     * 模拟
+     */
+    public int prefixCount(String[] words, String pref) {
+        int res = 0;
+        for (String s : words) {
+            if (s.startsWith(pref)) ++res;
+        }
+        return res;
+    }
+
+    /**
+     * 1658. 将 x 减到 0 的最小操作数
+     * 1.滑动窗口： 维护左边界 + 右边界的总和
+     * lsum + rsum == sum 一组答案
+     * lsum + rsum < sum  左边界向左移动
+     * lsum + rsum > sum  右边界向右移动
+     *
+     * 2.双指针
+     */
+    public int minOperations(int[] nums, int x) {
+        return -1;
+    }
+
 
 }
