@@ -1,6 +1,7 @@
 package com.wim.dailyCode.d2023;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class d202301 {
@@ -97,5 +98,61 @@ public class d202301 {
         return -1;
     }
 
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {
+        }
+        ListNode(int val) {
+            this.val = val;
+        }
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
 
+    /**
+     * 1669. 合并两个链表
+     * 双指针
+     */
+    public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
+        ListNode p = list1, q = list1;
+        // 注意控制移动的位置
+        while (--a > 0) {
+            p = p.next;
+        }
+        // 注意控制移动的位置
+        while (b-- > 0) {
+            q = q.next;
+        }
+        p.next = list2;
+        while (p.next != null) {
+            p = p.next;
+        }
+        p.next = q.next;
+        q.next = null;
+        return list1;
+    }
+
+    /**
+     * 2319. 判断矩阵是否是一个 X 矩阵
+     */
+    public boolean checkXMatrix(int[][] grid) {
+        int n = grid.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if ((i == j) || (i + j == n - 1)) {
+                    if (grid[i][j] == 0) {
+                        return false;
+                    }
+                } else {
+                    if (grid[i][j] != 0) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 }
