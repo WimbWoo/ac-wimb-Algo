@@ -75,4 +75,101 @@ public class d202302 {
         }
         return ans;
     }
+
+    /**
+     * 1138. 字母板上的路径
+     */
+    public String alphabetBoardPath(String target) {
+        int cx = 0, cy = 0;
+        StringBuffer res = new StringBuffer();
+        for (int i = 0;i < target.length();i++) {
+            char cur = target.charAt(i);
+            int nx = (cur - 'a') / 5;
+            int ny = (cur - 'a') % 5;
+            if (nx < cx) {
+                for (int j = 0; j < cx - nx; j++) {
+                    res.append('U');
+                }
+            }
+            if (ny < cy) {
+                for (int j = 0; j < cy - ny; j++) {
+                    res.append('L');
+                }
+            }
+            if (nx > cx) {
+                for (int j = 0; j < nx - cx; j++) {
+                    res.append('D');
+                }
+            }
+            if (ny > cy) {
+                for (int j = 0; j < ny - cy; j++) {
+                    res.append('R');
+                }
+            }
+            res.append("!");
+            cx = nx;
+            cy = ny;
+        }
+        return res.toString();
+    }
+
+    /**
+     * 1234. 替换子串得到平衡字符串
+     * 滑动窗口题解
+     * https://leetcode.cn/problems/replace-the-substring-for-balanced-string/solutions/2108942/javahua-dong-chuang-kou-de-fan-xiang-si-2dz8w/
+     */
+    public int balancedString(String s) {
+        int []counts = new int[26];
+        int len = s.length();
+        int limit = len / 4;
+        int left = 0;
+        int right = -1;
+        int minLen = len;
+        char[] charArray = s.toCharArray();
+        for (int i = 0; i < charArray.length;i++) {
+            counts[charArray[i] - 'A']++;
+        }
+        while (left < len) {
+            if (checkNoNeedChange(counts, limit)) {
+                minLen = Math.min(minLen, right - left + 1);
+                counts[s.charAt(left++) - 'A']++;
+            } else if (right < len - 1) {
+                counts[s.charAt(++right) - 'A']--;
+            } else {
+                break;
+            }
+        }
+        return minLen;
+    }
+
+    // 判断 counts 数组是否对应不可替换字符串
+    public boolean checkNoNeedChange(int counts[], int limit) {
+        if(counts['Q' - 'A'] > limit || counts['W' - 'A'] > limit || counts['E' - 'A'] > limit && counts['R' - 'A'] > limit) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 2341. 数组能形成多少数对
+     */
+    public int[] numberOfPairs(int[] nums) {
+        Arrays.sort(nums);
+        int l = 0, r = 0;
+        int left = 0, right = 0;
+        int pair = 0, count = 0;
+        int curCount = 0;
+        while (left < nums.length) {
+            while (right < nums.length && nums[right] == nums[left]) {
+                right++;
+            }
+            curCount = right - left;
+            pair +=  curCount/2;
+            if (curCount % 2 == 1) {
+                count++;
+            }
+            left = right;
+        }
+        return new int[]{pair, count};
+    }
 }
