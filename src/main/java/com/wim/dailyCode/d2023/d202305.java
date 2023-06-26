@@ -1,5 +1,7 @@
 package com.wim.dailyCode.d2023;
 
+import java.util.Arrays;
+
 public class d202305 {
     public static void main(String[] args) {
 
@@ -21,6 +23,36 @@ public class d202305 {
     public int transferToMins(String time) {
         String[] currentTime = time.split(":");
         return Integer.parseInt(currentTime[0]) * 60 + Integer.parseInt(currentTime[0]);
+    }
+
+    // 1079 活字印刷
+    /**
+     * 回溯模板题
+     */
+    public int numTilePossibilities(String tiles) {
+        char[] chars = tiles.toCharArray();
+        Arrays.sort(chars);
+        int result = 0;
+        backtrack(result, chars, new boolean[tiles.length()], tiles.length(), 0);
+        return result;
+    }
+
+    private void backtrack(int result, char[] chars, boolean[] used, int length, int index) {
+        if (index == length) {
+            return;
+        }
+        for (int i = 0; i < length; i++) {
+            if (used[i]) {
+                continue;
+            }
+            if (i - 1 >= 0 && chars[i] == chars[i - 1] && !used[i - 1]) {
+                continue;
+            }
+            used[i] = true;
+            result++;
+            backtrack(result, chars, used, length, index + 1);
+            used[i] = false;
+        }
     }
 
 }
