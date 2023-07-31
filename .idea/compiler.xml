@@ -11,5 +11,9 @@
         <module name="ac-wimb-Algo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ec-shopping-plugin-management" target="1.8" />
+      <module name="ec-shopping-plugin-management-interface" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
