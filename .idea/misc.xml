@@ -8,15 +8,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../ac-wim-Spring/pom.xml" />
-        <option value="$PROJECT_DIR$/../saas.ec-shopping-plugin-management-parent/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/../saas.ec-shopping-plugin-management-parent/ec-shopping-plugin-management-interface/pom.xml" />
-        <option value="$PROJECT_DIR$/../saas.ec-shopping-plugin-management-parent/ec-shopping-plugin-management/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

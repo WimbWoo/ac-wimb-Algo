@@ -7,13 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ac-wim-Algo" />
-        <module name="ac-wim-Spring" />
         <module name="ac-wimb-Algo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ac-wim-Spring" target="1.8" />
       <module name="ec-shopping-plugin-management" target="1.8" />
       <module name="ec-shopping-plugin-management-interface" target="1.8" />
+      <module name="ec-wimb-test" target="1.8" />
+      <module name="saas-ec-shopping-plugin-management-parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
